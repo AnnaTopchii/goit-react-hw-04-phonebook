@@ -16,7 +16,8 @@ const initalContacts = [
 
 export const App = () => {
   const [contacts, setContacts] = useState(
-    JSON.parse(window.localStorage.getItem('contactBook')) ?? initalContacts
+    () =>
+      JSON.parse(window.localStorage.getItem('contactBook')) ?? initalContacts
   );
   const [filter, setFilter] = useState('');
 
